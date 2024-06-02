@@ -6,7 +6,7 @@ const Remaining = () => {
         return (total = total + item.cost);
     }, 0);
     console.log("remaining update" + budget);
-    const alertType = totalExpenses > budget ? 'alert-danger' : 'alert-success';
+    const alertType = totalExpenses > budget ? alert("You cannot reduce the budget value lower than the spending.") : 'alert-success';
     //let { remaining } = budget - totalExpenses;
     // if (budget < remaining) {
     //    alert("The testvalue cannot exceed remaining funds  £"+budget);

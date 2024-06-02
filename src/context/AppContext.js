@@ -34,8 +34,10 @@ export const AppReducer = (state, action) => {
                 const red_expenses = state.expenses.map((currentExp)=> {
                     if (currentExp.name === action.payload.name && currentExp.cost - action.payload.cost >= 0) {
                         currentExp.cost =  currentExp.cost - action.payload.cost;
+                        alert("The value test cannot exceed remaining funds  £");
                         budget = state.budget + action.payload.cost
                     }
+                    alert("The value test cannot exceed remaining funds  £");
                     return currentExp
                 })
                 action.type = "DONE";
@@ -78,7 +80,7 @@ export const AppReducer = (state, action) => {
 
 // 1. Sets the initial state when the app loads
 const initialState = {
-    budget: 2000,
+    budget: 19900,
     expenses: [
         { id: "Marketing", name: 'Marketing', cost: 50 },
         { id: "Finance", name: 'Finance', cost: 300 },
