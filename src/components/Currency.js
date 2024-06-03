@@ -3,58 +3,42 @@ import { AppContext } from '../context/AppContext';
 const Currency = (props) => {
     const { dispatch, currency  } = useContext(AppContext);
     const [symbol, setName] = useState('');
-    const [cost, setCost] = useState('');
+    const [newCurrency, setCurrency] = useState('');
     const [action, setAction] = useState('');
     //console.log(currency)
     console.log("running Currency")
-    const submitEvent = () => {
+    const submitEvent = (event) => {
         //console.log("not submitted")
         if (symbol === "Dollar") {
-            console.log("Dollar")
-            console.log(currency[0])
+            console.log("Dollar");
+            const newerCurrency  = currency[0];
+            console.log(newerCurrency);
+            /* budget = newBudget;
+            //setCurrency(newerCurrency);
+            dispatch({
+                type: 'CHG_CURRENCY',
+                payload: newerCurrency,
+            }); */
             return;
         }
         if (symbol === "Pound") {
             console.log("Pound")
-            console.log(currency[1])
+            const newerCurrency  = currency[1];
+            console.log(newerCurrency);
             return;
         }
         if (symbol === "Euro") {
             console.log("Euro")
-            console.log(currency[2])
+            const newerCurrency  = currency[2];
+            console.log(newerCurrency);
             return;
         }
         if (symbol === "Ruppee") {
             console.log("Ruppee")
-            console.log(currency[3])
+            const newerCurrency  = currency[3];
+            console.log(newerCurrency);
             return;
         }
-            /*if(cost > remaining) {
-                alert("The value cannot exceed remaining funds  £"+remaining);
-                setCost("");
-                return;
-            } */
-        /*    
-        const currency = {
-            nameid: nameid,
-            symbol: symbol,
-        }; */
-        // if(symbol === "dollar") {
-            //alert("The value cannot exceed remaining funds  £"+ currency); 
-            // setCost("");
-        //     return;
-        /*if(action === "Reduce") {
-            dispatch({
-                type: 'RED_EXPENSE',
-                payload: expense,
-            });
-        } else {
-                dispatch({
-                    type: 'ADD_EXPENSE',
-                    payload: expense,
-                });
-            } */
-
     };
     submitEvent()
     return (
@@ -65,11 +49,10 @@ const Currency = (props) => {
                 <label className="input-group-text" htmlFor="inputGroupSelect01">Currency</label>
                   </div>
                   <select className="custom-select" id="inputGroupSelect01" onChange={(event) => setName(event.target.value)}>
-                        <option defaultValue>Choose...</option>
-                        <option value="Dollar" name="Dollar"> Dollar</option>
-                <option value="Pound" name="Pound">Pound</option>
-                <option value="Euro" name="Euro">Euro</option>
-                <option value="Ruppee" name="Ruppee">Ruppee</option>
+                        <option defaultValue="Dollar" name="Dollar">Dollar</option>
+                        <option value="Pound" name="Pound">Pound</option>
+                        <option value="Euro" name="Euro">Euro</option>
+                        <option value="Ruppee" name="Ruppee">Ruppee</option>
                   </select>
                 </div>
                 </div>
