@@ -5,20 +5,44 @@ const Currency = (props) => {
     const [symbol, setName] = useState('');
     const [cost, setCost] = useState('');
     const [action, setAction] = useState('');
-    /* dispatch({
-        type: 'CHG_CURRENCY',
-        payload: currency, 
-    }); */
+    //console.log(currency)
+    console.log("running Currency")
     const submitEvent = () => {
+        //console.log("not submitted")
+        if (symbol === "Dollar") {
+            console.log("Dollar")
+            console.log(currency[0])
+            return;
+        }
+        if (symbol === "Pound") {
+            console.log("Pound")
+            console.log(currency[1])
+            return;
+        }
+        if (symbol === "Euro") {
+            console.log("Euro")
+            console.log(currency[2])
+            return;
+        }
+        if (symbol === "Ruppee") {
+            console.log("Ruppee")
+            console.log(currency[3])
+            return;
+        }
             /*if(cost > remaining) {
                 alert("The value cannot exceed remaining funds  £"+remaining);
                 setCost("");
                 return;
             } */
+        /*    
         const currency = {
             nameid: nameid,
             symbol: symbol,
-        };
+        }; */
+        // if(symbol === "dollar") {
+            //alert("The value cannot exceed remaining funds  £"+ currency); 
+            // setCost("");
+        //     return;
         /*if(action === "Reduce") {
             dispatch({
                 type: 'RED_EXPENSE',
@@ -30,7 +54,9 @@ const Currency = (props) => {
                     payload: expense,
                 });
             } */
+
     };
+    submitEvent()
     return (
         <div>
             <div className='row'>

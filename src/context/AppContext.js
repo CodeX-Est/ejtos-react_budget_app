@@ -110,11 +110,12 @@ export const AppProvider = (props) => {
 
     if (state.expenses) {
             const totalExpenses = state.expenses.reduce((total, item) => {
+            console.log(item.cost);
+            console.log("Provider - item cost")
             return (total = total + item.cost);
         }, 0);
         remaining = state.budget - totalExpenses;
     }
-
     return (
         <AppContext.Provider
             value={{
