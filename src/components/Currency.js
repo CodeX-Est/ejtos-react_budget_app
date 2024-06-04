@@ -7,40 +7,59 @@ const Currency = (props) => {
     const [action, setAction] = useState('');
     //console.log(currency)
     console.log("running Currency")
+    //let newerCurrency = currency[0]
     const submitEvent = (event) => {
-        //console.log("not submitted")
-        if (symbol === "Dollar") {
+        console.log("not submitted")
+        console.log(currency)
+        console.log(symbol)
+        console.log(event.target.value)
+        if (event.target.value === "Dollar") {
             console.log("Dollar");
-            const newerCurrency  = currency[0];
+            const newerCurrency  = event.target.value
             console.log(newerCurrency);
-            /* budget = newBudget;
-            //setCurrency(newerCurrency);
+            // budget = newBudget;
+            setName(event.target.value);
             dispatch({
                 type: 'CHG_CURRENCY',
                 payload: newerCurrency,
-            }); */
+            });
             return;
         }
-        if (symbol === "Pound") {
+        if (event.target.value === "Pound") {
             console.log("Pound")
-            const newerCurrency  = currency[1];
+            const newerCurrency  = event.target.value
             console.log(newerCurrency);
+            setName(event.target.value);
+            dispatch({
+                type: 'CHG_CURRENCY',
+                payload: newerCurrency,
+            });
             return;
         }
-        if (symbol === "Euro") {
+        if (event.target.value === "Euro") {
             console.log("Euro")
-            const newerCurrency  = currency[2];
+            const newerCurrency  = event.target.value;
             console.log(newerCurrency);
+            setName(event.target.value);
+            dispatch({
+                type: 'CHG_CURRENCY',
+                payload: newerCurrency,
+            });
             return;
         }
-        if (symbol === "Ruppee") {
+        if (event.target.value === "Ruppee") {
             console.log("Ruppee")
-            const newerCurrency  = currency[3];
+            const newerCurrency  = event.target.value;
             console.log(newerCurrency);
+            setName(event.target.value);
+            dispatch({
+                type: 'CHG_CURRENCY',
+                payload: newerCurrency,
+            });
             return;
         }
     };
-    submitEvent()
+    // submitEvent()
     return (
         <div>
             <div className='row'>
@@ -48,7 +67,7 @@ const Currency = (props) => {
                     <div className="input-group-prepend">
                 <label className="input-group-text" htmlFor="inputGroupSelect01">Currency</label>
                   </div>
-                  <select className="custom-select" id="inputGroupSelect01" onChange={(event) => setName(event.target.value)}>
+                  <select className="custom-select" id="inputGroupSelect01" onChange={submitEvent}>
                         <option defaultValue="Dollar" name="Dollar">Dollar</option>
                         <option value="Pound" name="Pound">Pound</option>
                         <option value="Euro" name="Euro">Euro</option>
