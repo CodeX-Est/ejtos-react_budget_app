@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
+import '../App.css';
 const Currency = (props) => {
     const { dispatch, currency  } = useContext(AppContext);
     const [symbol, setName] = useState('');
@@ -12,7 +13,7 @@ const Currency = (props) => {
         //console.log("not submitted")
         //console.log(currency)
         //console.log(symbol)
-        //console.log(event.target.value)
+        console.log(event.target.value)
         if (event.target.value === "Dollar") {
             //console.log("Dollar");
             const newerCurrency  = "$"
@@ -61,20 +62,13 @@ const Currency = (props) => {
     };
     // submitEvent()
     return (
-        <div>
-            <div className='row'>
-            <div className="input-group mb-3" style={{ marginLeft: '2rem' }}>
-                    <div className="input-group-prepend">
-                <label className="input-group-text" htmlFor="inputGroupSelect01">Currency</label>
-                  </div>
-                  <select className="custom-select" id="inputGroupSelect01" onChange={submitEvent}>
-                        <option defaultValue="Dollar" name="Dollar">$ Dollar</option>
-                        <option value="Pound" name="Pound">£ Pound</option>
-                        <option value="Euro" name="Euro">€ Euro</option>
-                        <option value="Ruppee" name="Ruppee">₹ Ruppee</option>
-                  </select>
-                </div>
-                </div>
+        <div className='container'>
+            <select className="currency-item" id="inputGroupSelect02" onChange={submitEvent}>
+                <option value="Dollar" name="Dollar">$ Dollar</option>
+                <option value="Pound" name="Pound">£ Pound</option>
+                <option value="Euro" name="Euro">€ Euro</option>
+                <option value="Ruppee" name="Ruppee">₹ Ruppee</option>
+            </select>
         </div>
     );
 };
