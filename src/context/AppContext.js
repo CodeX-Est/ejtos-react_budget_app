@@ -68,8 +68,8 @@ export const AppReducer = (state, action) => {
             };
         case 'CHG_CURRENCY':
             action.type = "DONE";
-            state.currency = action.payload;
-            console.log("SET Currency" + state.currency);
+            state.currencyValue = action.payload;
+            console.log("SET Currency" + state.currencyValue);
             return {
                 ...state
             }
@@ -95,6 +95,7 @@ const initialState = {
         { symbol:  "€", nameid: "Euro"},
         { symbol: "₹", nameid: "Ruppee"},
     ],
+    currencyValue: "$"
 
 };
 
@@ -110,8 +111,8 @@ export const AppProvider = (props) => {
 
     if (state.expenses) {
             const totalExpenses = state.expenses.reduce((total, item) => {
-            console.log(item.cost);
-            console.log("Provider - item cost")
+            //console.log(item.cost);
+            //console.log("Provider - item cost")
             return (total = total + item.cost);
         }, 0);
         remaining = state.budget - totalExpenses;
@@ -123,7 +124,8 @@ export const AppProvider = (props) => {
                 budget: state.budget,
                 remaining: remaining,
                 dispatch,
-                currency: state.currency
+                currency: state.currency,
+                currencyValue: state.currencyValue
             }}
         >
             {props.children}

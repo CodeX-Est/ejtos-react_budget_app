@@ -9,16 +9,16 @@ const Currency = (props) => {
     console.log("running Currency")
     //let newerCurrency = currency[0]
     const submitEvent = (event) => {
-        console.log("not submitted")
-        console.log(currency)
-        console.log(symbol)
-        console.log(event.target.value)
+        //console.log("not submitted")
+        //console.log(currency)
+        //console.log(symbol)
+        //console.log(event.target.value)
         if (event.target.value === "Dollar") {
-            console.log("Dollar");
-            const newerCurrency  = event.target.value
-            console.log(newerCurrency);
+            //console.log("Dollar");
+            const newerCurrency  = "$"
+            //console.log(newerCurrency);
             // budget = newBudget;
-            setName(event.target.value);
+            //setName(event.target.value);
             dispatch({
                 type: 'CHG_CURRENCY',
                 payload: newerCurrency,
@@ -26,10 +26,10 @@ const Currency = (props) => {
             return;
         }
         if (event.target.value === "Pound") {
-            console.log("Pound")
-            const newerCurrency  = event.target.value
-            console.log(newerCurrency);
-            setName(event.target.value);
+            //console.log("Pound")
+            const newerCurrency  = "£"
+            //console.log(newerCurrency);
+            //setName(event.target.value);
             dispatch({
                 type: 'CHG_CURRENCY',
                 payload: newerCurrency,
@@ -37,10 +37,10 @@ const Currency = (props) => {
             return;
         }
         if (event.target.value === "Euro") {
-            console.log("Euro")
-            const newerCurrency  = event.target.value;
-            console.log(newerCurrency);
-            setName(event.target.value);
+            //console.log("Euro")
+            const newerCurrency  = "€";
+            //console.log(newerCurrency);
+            //setName(event.target.value);
             dispatch({
                 type: 'CHG_CURRENCY',
                 payload: newerCurrency,
@@ -48,10 +48,10 @@ const Currency = (props) => {
             return;
         }
         if (event.target.value === "Ruppee") {
-            console.log("Ruppee")
-            const newerCurrency  = event.target.value;
-            console.log(newerCurrency);
-            setName(event.target.value);
+            //console.log("Ruppee")
+            const newerCurrency  = "₹";
+            //console.log(newerCurrency);
+            //setName(event.target.value);
             dispatch({
                 type: 'CHG_CURRENCY',
                 payload: newerCurrency,

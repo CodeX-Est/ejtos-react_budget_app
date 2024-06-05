@@ -5,7 +5,7 @@ const Remaining = () => {
     const totalExpenses = expenses.reduce((total, item) => {
         return (total = total + item.cost);
     }, 0);
-    console.log("remaining update" + budget);
+    //console.log("remaining update" + budget);
     const alertType = totalExpenses > budget ? alert("You cannot reduce the budget value lower than the spending.") : 'alert-success';
     //let { remaining } = budget - totalExpenses;
     // if (budget < remaining) {
