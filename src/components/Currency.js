@@ -6,7 +6,7 @@ const Currency = (props) => {
     const [newCurrency, setCurrency] = useState('');
     const [action, setAction] = useState('');
     //console.log(currency)
-    console.log("running Currency")
+    //console.log("running Currency")
     //let newerCurrency = currency[0]
     const submitEvent = (event) => {
         //console.log("not submitted")

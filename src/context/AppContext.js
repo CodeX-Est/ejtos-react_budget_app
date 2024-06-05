@@ -48,10 +48,15 @@ export const AppReducer = (state, action) => {
             case 'DELETE_EXPENSE':
             action.type = "DONE";
             state.expenses.map((currentExp)=> {
-                if (currentExp.name === action.payload) {
-                    budget = state.budget + currentExp.cost
-                    currentExp.cost =  0;
+                //let {newExpenseCost} = 0;
+                console.log(currentExp.cost)
+                console.log(action.payload.cost)
+                if (currentExp.name === action.payload.name) {
+                    console.log("1")
+                    budget = state.budget - currentExp.cost
+                    currentExp.cost = currentExp.cost -  action.payload.cost;
                 }
+                //console.log(newExpenseCost)
                 return currentExp
             })
             action.type = "DONE";
@@ -62,7 +67,8 @@ export const AppReducer = (state, action) => {
         case 'SET_BUDGET':
             action.type = "DONE";
             state.budget = action.payload;
-            console.log("SET BUDGET" + state.budget);
+            console.log(state.budget)
+            //console.log("SET BUDGET" + state.budget);
             return {
                 ...state,
             };
@@ -81,7 +87,7 @@ export const AppReducer = (state, action) => {
 
 // 1. Sets the initial state when the app loads
 const initialState = {
-    budget: 19900,
+    budget: 2000,
     expenses: [
         { id: "Marketing", name: 'Marketing', cost: 50 },
         { id: "Finance", name: 'Finance', cost: 300 },
