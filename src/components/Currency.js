@@ -68,10 +68,10 @@ const Currency = (props) => {
                 <label className="input-group-text" htmlFor="inputGroupSelect01">Currency</label>
                   </div>
                   <select className="custom-select" id="inputGroupSelect01" onChange={submitEvent}>
-                        <option defaultValue="Dollar" name="Dollar">Dollar</option>
-                        <option value="Pound" name="Pound">Pound</option>
-                        <option value="Euro" name="Euro">Euro</option>
-                        <option value="Ruppee" name="Ruppee">Ruppee</option>
+                        <option defaultValue="Dollar" name="Dollar">$ Dollar</option>
+                        <option value="Pound" name="Pound">£ Pound</option>
+                        <option value="Euro" name="Euro">€ Euro</option>
+                        <option value="Ruppee" name="Ruppee">₹ Ruppee</option>
                   </select>
                 </div>
                 </div>
